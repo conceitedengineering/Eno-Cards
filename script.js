@@ -25,16 +25,18 @@ const drawIntervalValue = document.getElementById('drawIntervalValue');
 const toast = document.getElementById('toast');
 
 let isFirstClick = true;
-let currentIndex = -1; // Initialize to -1 so the first strategy is at index 0
 let lastDrawTime = 0;
 let drawInterval = 0;
+
+function getRandomStrategy() {
+    return strategies[Math.floor(Math.random() * strategies.length)];
+}
 
 function displayStrategy() {
     card.classList.add('swiped');
     
     setTimeout(() => {
-        currentIndex = (currentIndex + 1) % strategies.length;
-        strategyElement.textContent = strategies[currentIndex];
+        strategyElement.textContent = getRandomStrategy();
         card.classList.remove('swiped');
     }, 250);
 
