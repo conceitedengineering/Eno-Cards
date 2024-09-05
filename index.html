@@ -25,6 +25,10 @@
             margin-bottom: 24px;
         }
 
+        h3 {
+            margin-bottom: 10px; /* Reduced from default margin */
+        }
+
         .card-container {
             perspective: 1000px;
         }
@@ -87,13 +91,32 @@
 
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: 15vh auto; /* Keep this as it was */
             padding: 30px;
             border: 1px solid #888;
             width: 90%;
-            max-width: 400px;
+            max-width: 500px;
             border-radius: 10px;
-            text-align: center;
+            text-align: left;
+            max-height: 75vh;
+            overflow-y: auto; /* Keep the scrolling behavior */
+        }
+
+        .credits-section {
+            margin-top: 2px;
+            padding-top: 10px;
+        }
+
+        .credits-section h4 {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 3px solid #ccc;
+            padding-left: 15px;
+            margin-left: 0;
+            color: #555;
         }
 
         .close {
@@ -209,7 +232,19 @@
 
             .modal-content {
                 padding: 20px;
-                margin: 20% auto;
+                margin: 10vh auto; /* Keep this as it was */
+                width: 85%; /* Reduced from 95% to make it less wide on mobile */
+                
+            }
+
+            .credits-section {
+                margin-top: 20px;
+                padding-top: 15px;
+            }
+
+            blockquote {
+                font-size: 14px;
+                padding-left: 10px;
             }
 
             .settings-row {
@@ -225,6 +260,30 @@
             #drawIntervalSlider {
                 width: 100%;
             }
+        }
+
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 30px 0 20px;
+        }
+
+        body.dark-mode .divider {
+            border-top-color: #444;
+        }
+
+        .attribution {
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        body.dark-mode .attribution a {
+            color: #64b5f6;
         }
     </style>
 </head>
@@ -243,7 +302,18 @@
     <div id="settingsModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3>Settings</h3>
+            <h3>About Oblique Strategies</h3>
+    
+            <div class="credits-section">
+                <p>Oblique Strategies is a method jointly devised by the musician Brian Eno and artist Peter Schmidt to overcome creative blocks. Original instructions below:</p>
+                <blockquote>
+                    These cards evolved from our separate observations on the principles underlying what we were doing. Sometimes they were recognized in retrospect (intellect catching up with intuition), sometimes they were identified as they were happening, sometimes they were formulated.
+                    <br><br>
+                    They can be used as a pack (a set of possibilities being continuously reviewed in the mind) or by drawing a single card from the shuffled pack when a dilemma occurs in a working situation. In this case, the card is trusted even if its appropriateness is quite unclear. They are not final, as new ideas will present themselves, and others will become self-evident.
+                </blockquote>
+            </div>
+            <div class="divider"></div>
+            <h4>Settings</h4>
             <div class="settings-row">
                 <span class="settings-label">Dark Mode</span>
                 <label class="switch">
@@ -256,6 +326,10 @@
                 <span id="drawIntervalValue">0</span>
             </div>
             <input type="range" id="drawIntervalSlider" min="0" max="7" value="0">
+            
+            <div class="attribution">
+                This site is made with love and robots by <a href="https://negash.work/" target="_blank" rel="noopener noreferrer">Negash</a>.
+            </div>
         </div>
     </div>
 
