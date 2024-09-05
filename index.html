@@ -34,8 +34,8 @@
             padding: 24px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 320px;
-            height: 192px;
+            width: 420px; /* Increased from 320px */
+            height: 216px; /* Increased from 192px */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -193,6 +193,38 @@
         #drawIntervalSlider {
             width: 100%;
             margin-top: 10px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
+            .card {
+                width: 300px;
+                height: 180px;
+                padding: 20px;
+            }
+
+            #strategy {
+                font-size: 16px;
+            }
+
+            .modal-content {
+                padding: 20px;
+                margin: 20% auto;
+            }
+
+            .settings-row {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 15px;
+            }
+
+            .settings-label {
+                margin-bottom: 5px;
+            }
+
+            #drawIntervalSlider {
+                width: 100%;
+            }
         }
     </style>
 </head>
